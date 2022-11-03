@@ -49,7 +49,6 @@ for i in range(len(matrix)):
         totalSum += matrix[i][j]
 
     rowSumList.append(rowSum)
-
     print("\t", matrix[i])
 print("]")
 
