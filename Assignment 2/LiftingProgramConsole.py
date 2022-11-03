@@ -108,14 +108,18 @@ else:
             lifterToRemove = input("Enter lifter name to remove:\t")
             # lifterToRemove = str(lifterToRemove).lower().capitalize()
 
+            exists = False
             position = 0
             index = 0
             for lifter in lifters:
-                if lifter['name'] == lifterToRemove:
+                exists = lifter['name'] == lifterToRemove
+                if exists:
                     position = index
-                else:
-                    print("Lifter '" + lifterToRemove + "' doesn't exists!")
+                    break
                 index += 1
+
+            if not exists:
+                print("Lifter '" + lifterToRemove + "' doesn't exists!")
 
             lifters.pop(position)
             action = "!r"
