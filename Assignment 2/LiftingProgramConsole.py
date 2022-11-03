@@ -69,7 +69,6 @@ else:
                 lifters.append(lifter)
 
             action = "!a"
-            newAction = not 'a'
 
         elif newAction == 'u':
             lifterToUpdate = input("Enter lifter name to update:\t")
@@ -102,7 +101,6 @@ else:
                 print("Lifter '" + lifterToUpdate + "' doesn't exists!")
 
             action = "!u"
-            newAction = not 'u'
 
         elif newAction == 'r':
             lifterToRemove = input("Enter lifter name to remove:\t")
@@ -123,7 +121,6 @@ else:
 
             lifters.pop(position)
             action = "!r"
-            newAction = not 'r'
 
         elif newAction == 'v':
             if len(lifters) > 0:
@@ -140,6 +137,8 @@ else:
                     print()
             else:
                 print("No lifters added yet!")
+
+            action = "!v"
 
         elif newAction == 'x':
             print("Exit!")
