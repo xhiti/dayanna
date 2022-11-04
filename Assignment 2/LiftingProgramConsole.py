@@ -1,6 +1,4 @@
 print('Welcome to PowerLifting Data Collector! \n')
-
-
 print('Available action:')
 print('a - Add new lifter!')
 print('r - Remove lifter!')
@@ -8,9 +6,7 @@ print('u - Update lifter!')
 print('v - View all lifters!')
 print('x - Exit the program!')
 
-counter = 0
 lifters = []
-
 action = str(input('\nPlease enter action!\t'))
 
 if action not in 'aruvx':
@@ -49,9 +45,9 @@ else:
             newAction = str(input('\nPlease enter action!\t'))
             action = newAction
 
+        # 1. ADD Lifter
         if newAction == 'a':
             lifterToAdd = input("Enter new lifter name:\t")
-            # lifterToAdd = str(lifterToAdd).lower().capitalize()
 
             exists = False
             for lifter in lifters:
@@ -70,9 +66,9 @@ else:
 
             action = "!a"
 
+        # 2. UPDATE Lifter
         elif newAction == 'u':
             lifterToUpdate = input("Enter lifter name to update:\t")
-            # lifterToUpdate = str(lifterToUpdate).lower().capitalize()
 
             exists = False
             for lifter in lifters:
@@ -88,12 +84,7 @@ else:
 
                         for weight in weights:
                             if float(weight):
-                                if liftType == 'squat':
-                                    lifter['squat'].append(float(weight))
-                                if liftType == 'benchpress':
-                                    lifter['benchpress'].append(float(weight))
-                                if liftType == 'deadlift':
-                                    lifter['deadlift'].append(float(weight))
+                                lifter[liftType].append(float(weight))
                             else:
                                 print("Weights given aren't float numbers!")
                                 break
@@ -102,9 +93,9 @@ else:
 
             action = "!u"
 
+        # 3. REMOVE Lifter
         elif newAction == 'r':
             lifterToRemove = input("Enter lifter name to remove:\t")
-            # lifterToRemove = str(lifterToRemove).lower().capitalize()
 
             exists = False
             position = 0
@@ -122,6 +113,7 @@ else:
             lifters.pop(position)
             action = "!r"
 
+        # 4. VIEW Lifters
         elif newAction == 'v':
             if len(lifters) > 0:
                 counter = 0
@@ -140,6 +132,7 @@ else:
 
             action = "!v"
 
+        # 5. EXIT Program
         elif newAction == 'x':
             print("Exit!")
             break
