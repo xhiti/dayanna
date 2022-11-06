@@ -23,18 +23,7 @@ else:
     while action:
         newAction = action
 
-        if action == 'v':
-            if len(lifters) == 0:
-                print('No lifters added yet!')
-
         if action != 'a':
-            if action == 'x':
-                print('Exit!')
-
-            if action == 'v':
-                if len(lifters) == 0:
-                    print('No lifters added yet!')
-
             print('\n\nAvailable action:')
             print('a - Add new lifter!')
             print('r - Remove lifter!')
