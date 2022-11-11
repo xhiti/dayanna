@@ -1,5 +1,4 @@
-# 1. Write a function that calculates and returns the n-th Fibonacci number using for loop:
-
+# 1. Write a function FIB that calculates and returns the n-th Fibonacci number using for loop:
 def fib(n):
     if n < 0:
         return -1
