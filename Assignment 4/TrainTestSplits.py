@@ -1,20 +1,10 @@
 # 3. Write a function create_train_test_splits(data: list, train_size: float) -> tuple that
 #    creates two data splits (train and test)
-def isValidType(number):
-    return type(number) in (float, int)
-
-
-def isPercentage(number):
-    if type(number) is float:
-        return 0.0 < number < 1.0
-    return False
-
-
 def create_train_test_splits(data, trainSize):
     trainList = []
     testList = []
 
-    if isPercentage(trainSize):
+    if type(trainSize) is float and 0.0 < trainSize < 1.0:
         dataLength = len(data)
 
         if dataLength > 0:
@@ -25,7 +15,7 @@ def create_train_test_splits(data, trainSize):
                 trainSplitLength = int(trainSplitLength[0])
 
             for i in range(len(data)):
-                if isValidType(data[i]):
+                if type(data[i]) in (float, int):
                     if i < trainSplitLength:
                         trainList.append(data[i])
                     else:
