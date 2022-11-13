@@ -4,15 +4,15 @@ def fib(n):
         return -1
 
     if 0 >= n <= 1:
-        return 1
+        return n
 
     previousNumber = 0
     currentNumber = 1
 
     for i in range(n - 1):
-        newNumber = previousNumber + currentNumber
+        nextNumber = previousNumber + currentNumber
         previousNumber = currentNumber
-        currentNumber = newNumber
+        currentNumber = nextNumber
 
     return currentNumber
 
