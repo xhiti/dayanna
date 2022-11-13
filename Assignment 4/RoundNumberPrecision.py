@@ -36,6 +36,10 @@ def round_(number, nDigits=None):
     return roundedNumber
 
 
+number = str(input("Please enter a number: "))
+digit = str(input("Please enter the n-th digit to round: "))
+print("Rund form User: ", round_(number, digit))
+
 print("Round #1:\t", round_(777.777))
 print("Round #2:\t", round_(777.777, 0))
 print("Round #3:\t", round_(777.777, 1))
