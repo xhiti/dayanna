@@ -1,29 +1,32 @@
 # 4. Write a function round_ that rounds a given number (integer or float) to ndigits precision:
-def isValidType(number):
-    return type(number) in (float, int)
-
 
 def round_(number, nDigits=None):
     roundedNumber = number
     strNumber = str(number).split(".")
-    if isValidType(number):
+
+    if type(number) in (float, int):
         if nDigits is not None:
             digitsBeforeFloat = len(strNumber[0])
             digitsAfterFloat = len(strNumber[1])
+
             if digitsBeforeFloat == nDigits:
                 if digitsAfterFloat == (-1) * nDigits:
                     roundedNumber = number
                 else:
                     roundedNumber = number
+
             elif nDigits > digitsBeforeFloat:
                 roundedNumber = number
+
             elif (-1) * nDigits > digitsBeforeFloat:
                 roundedNumber = 0.0
+
             else:
                 multiplier = 10 ** nDigits
                 roundedNumber = int((number * multiplier) + (multiplier * 10 ** -nDigits)) / multiplier
         else:
             firstDigit = int(strNumber[0][-1])
+
             if firstDigit > 4:
                 roundedNumber = int(number + 1)
             else:
