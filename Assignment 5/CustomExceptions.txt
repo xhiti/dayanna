@@ -15,6 +15,7 @@ m) and after that it prints F5 as we don't have a excpetion rule to print or not
 
 f(1) => h1, h2, g1, g4, f1, f4, f5
 
+Using the same LOGIC execution queue we have these results for:
 
 2. Execution of f(-1):
 f(-1) => h1, g4, Error A
