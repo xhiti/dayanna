@@ -18,15 +18,13 @@ def gen_range(start, stop, step=1):
 
     if step > 0:
         while i < stop:
-            yield i
-            i += step
             listOfElements.append(i)
+            i += step
 
     elif step < 0:
         while i > stop:
-            yield i
-            i += step
             listOfElements.append(i)
+            i += step
 
     return listOfElements
 
@@ -37,6 +35,5 @@ print("Example # 3: ", list(gen_range(0, 10, -1)))
 print("Example # 4: ", list(gen_range(10, 0)))
 print("Example # 5: ", list(gen_range(10, 0, -2)))
 print("Example # 6: ", list(gen_range(-10, -3, 2)))
-# print("Example # 7: ", list(gen_range(0.0, 10)))
-# print("Example # 8: ", list(gen_range(0, 10, 0)))
-
+print("Example # 7: ", list(gen_range(0.0, 10)))
+print("Example # 8: ", list(gen_range(0, 10, 0)))

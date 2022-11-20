@@ -1,6 +1,5 @@
 # 2. Write a generator function gen_range(start: int, stop: int, step: int = 1) that yields values with range
 def gen_range(start, stop, step=1):
-    listOfElements = []
 
     if not isinstance(start, int):
         raise TypeError("START value must be an INTEGER!")
@@ -20,7 +19,7 @@ def gen_range(start, stop, step=1):
 
         return [start] + gen_range(start + step, stop, step)
 
-    if step < 0:
+    elif step < 0:
         if start >= stop or step < stop:
             return []
 
