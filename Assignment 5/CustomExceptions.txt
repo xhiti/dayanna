@@ -16,19 +16,13 @@ m) and after that it prints F5 as we don't have a excpetion rule to print or not
 f(1) => h1, h2, g1, g4, f1, f4, f5
 
 
-1. Execution of f(-1):
-a) x = -1 (it's an integer), so it enters the TRY block
-b) after that he calls the g(x) function
-c) x = 1 (it's an integer), so it enters the TRY block
-d) after that he calls the h(x) function
-e) x = 1 (it's an integer), so it enters the TRY block
-f) x isn't lower than 0 or graater than 10 so it doesn't raise the custom exeptions
-g) he enters dhe FINALLY block so it prints H1
-h) after that he prints H2
-i) we come back to g(x) function and after h(x) called in TRY block it prints G1
-j) it doesn't raise the custom exception ErrorA so it enters the FINALLY block where it prints G4
-k) then we come back to f(x) function after we called g(x) in the TRY block it prints F1
-l) it doesn't raise the custom exceptions ErrorA and ErrorB so it executes the else row and prints F4
-m) and after that it prints F5 as we don't have a excpetion rule to print or not to print it
+2. Execution of f(-1):
+f(-1) => h1, g4, Error A
 
-f(1) => h1, h2, g1, g4, f1, f4, f5
+
+3. Execution of f(15):
+f(15) => h1, g4, Error B
+
+
+4. Execution of f(-15):
+f(-15) => h1, g4, Error A

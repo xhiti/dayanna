@@ -38,7 +38,7 @@ def h(x: int):
     print("h2")
 
 
-print("f(1) => ", f(1))
-print("f(-1) => ", f(-1))
-print("f(15) => ", f(15))
-print("f(-15) => ", f(-15))
+# print("Exmple # 1: f(1) => ", f(1))
+# print("Exmple # 2: f(-1) => ", f(-1))
+# print("Exmple # 3: f(15) => ", f(15))
+print("Exmple # 4: f(-15) => ", f(-15))
