@@ -12,6 +12,7 @@ def matrix_stats(matrix: np.ndarray):
     }
 
     sumOfColumns = []
+    sumOfRows = []
 
     for i in range(len(matrix[0])):
         sumOfColumns.append(0)
@@ -28,12 +29,14 @@ def matrix_stats(matrix: np.ndarray):
             sumOfRow += element
             sumOfAll += element
 
+        sumOfRows.append(sumOfRow)
+
         for i in range(len(currentRow)):
             sumOfColumns[i] = currentRow[i] + nextRow[i]
 
         index += 1
         currentRow = sumOfColumns
-        stats["row_sums"] = np.append(stats["row_sums"], sumOfRow)
+        stats["row_sums"] = np.array(sumOfRows)
 
     stats["total_sum"] += sumOfAll
     stats["column_sums"] = np.array(sumOfColumns)
