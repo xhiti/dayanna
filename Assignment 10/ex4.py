@@ -29,20 +29,55 @@ def create_minefield(rows: int, cols: int, n_mines: int, seed=None):
     # 2. Set Mines
     for i in range(len(mineField)):
         for j in range(len(mineField[0])):
-            print("Value: ", mineField[i][j])
-
             while numberOfMinesLeft != 0:
                 mineRowPosition = np.random.randint(0, rows - 1)
                 mineColumnPosition = np.random.randint(0, cols - 1)
 
-                if i == mineRowPosition and j == mineColumnPosition:
+                if mineField[mineRowPosition][mineColumnPosition] == -1:
                     pass
                 else:
-                    mineField[i][j] = -1
+                    mineField[mineRowPosition][mineColumnPosition] = -1
+
+                    # 1. Left Neighbour
+                    if mineField[mineRowPosition][mineColumnPosition-1] != -1:
+                        if mineColumnPosition > 0:
+                            mineField[mineRowPosition][mineColumnPosition-1] += 1
+
+                    # 2. Right Neighbour
+                    if mineField[mineRowPosition][mineColumnPosition+1] != -1 and mineColumnPosition < cols-1:
+                        mineField[mineRowPosition][mineColumnPosition+1] += 1
+
+                    # 3. Up Neighbour
+                    if mineField[mineRowPosition-1][mineColumnPosition] != -1 and mineRowPosition > 1:
+                        mineField[mineRowPosition-1][mineColumnPosition] += 1
+
+                    # 4. Bottom Neighbour
+                    if mineField[mineRowPosition+1][mineColumnPosition] != -1 and mineRowPosition < rows-1:
+                        mineField[mineRowPosition+1][mineColumnPosition] += 1
+
+                    # 5. Up-Right Neighbour
+                    if mineField[mineRowPosition+1][mineColumnPosition+1] != -1 and mineRowPosition < rows-1 and mineColumnPosition < cols-1:
+                        mineField[mineRowPosition+1][mineColumnPosition+1] += 1
+
+                    # 6 Bottom-Left Neighbour
+                    if mineField[mineRowPosition-1][mineColumnPosition-1] != -1 and mineRowPosition > 0 and mineColumnPosition > 0:
+                        mineField[mineRowPosition-1][mineColumnPosition-1] += 1
+
+                    # 7. Up-Left Neighbour
+                    if mineField[mineRowPosition+1][mineColumnPosition-1] != -1 and mineRowPosition < rows-1 and mineColumnPosition > 0:
+                        mineField[mineRowPosition+1][mineColumnPosition-1] += 1
+
+                    # 8. Bottom-Right Neighbour
+                    if mineField[mineRowPosition-1][mineColumnPosition+1] != -1 and mineRowPosition > 0 and mineColumnPosition < cols-1:
+                        mineField[mineRowPosition-1][mineColumnPosition+1] += 1
+
                     numberOfMinesLeft -= 1
 
     return np.array(mineField)
 
 
 
-print("\n\nOutput #1: \n", create_minefield(7, 7, 3, 0))
+print("Output #1: \n", create_minefield(7, 7, 3, 0))
+print("\nOutput #2: \n", create_minefield(7, 7, 1, 0))
+print("\nOutput #3: \n", create_minefield(7, 7, 20, 0))
+print("\nOutput #4: \n", create_minefield(7, 7, 5, 2))
