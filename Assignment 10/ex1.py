@@ -24,7 +24,7 @@ def extend(arr: np.ndarray, size: int, fill=None):
 
     if fill is None:
         for i in range(addElements):
-            newArr = np.append(newArr, 1)
+            newArr = np.append(newArr, np.random.default_rng(12345).random())
     else:
         if fill == "mean":
             if np.issubdtype(arr.dtype, np.int_):
