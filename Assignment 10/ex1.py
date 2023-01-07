@@ -10,7 +10,7 @@ def extend(arr: np.ndarray, size: int, fill=None):
         raise ValueError("ValueError: The given array must be 1D!")
 
     if size < len(arr):
-        raise ValueError("ValueError: The size can't be smaller than the 1D array!")
+        raise ValueError("ValueError: The size can't be smaller than the 1D array's size!")
 
     if size == len(arr):
         return newArr
@@ -43,8 +43,8 @@ def extend(arr: np.ndarray, size: int, fill=None):
     return newArr
 
 
-print("Extend #1: ", extend(np.arange(4), 7))
-print("Extend #2: ", extend(np.arange(4), 7, fill=0))
-print("Extend #3: ", extend(np.arange(4), 7, fill="mean"))
-print("Extend #4: ", extend(np.arange(4, dtype=float), 7, fill="mean"))
-print("Extend #5: ", extend(np.array(["hello", "world"]), 5, "mean"))
+print("Output #1: ", extend(np.arange(4), 7))
+print("Output #2: ", extend(np.arange(4), 7, fill=0))
+print("Output #3: ", extend(np.arange(4), 7, fill="mean"))
+print("Output #4: ", extend(np.arange(4, dtype=float), 7, fill="mean"))
+print("Output #5: ", extend(np.array(["hello", "world"]), 5, "mean"))

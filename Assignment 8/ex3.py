@@ -36,10 +36,10 @@ class Aggregator:
 int_agg = Aggregator(agg_type=int)
 int_agg(1, 2, 3)
 int_agg(4, "hi", 5.1)
-print("INT Aggregator: ", int_agg())
+print("Output #1:", int_agg())
 str_agg = Aggregator(agg_type=str, ignore_errors=False)
-print("STRING Aggregator: ", str_agg("this", " ", "is a test"))
+print("Output #2:", str_agg("this", " ", "is a test"))
 try:
     str_agg(1)
 except TypeError as e:
-    print(f"{type(e).__name__}: {e}")
+    print(f"Output #3: {type(e).__name__}: {e}")
