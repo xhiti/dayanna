@@ -30,10 +30,16 @@ def create_minefield(rows: int, cols: int, n_mines: int, seed=None):
     for i in range(len(mineField)):
         for j in range(len(mineField[0])):
             print("Value: ", mineField[i][j])
+
             while numberOfMinesLeft != 0:
                 mineRowPosition = np.random.randint(0, rows - 1)
                 mineColumnPosition = np.random.randint(0, cols - 1)
-                numberOfMinesLeft -= 1
+
+                if i == mineRowPosition and j == mineColumnPosition:
+                    pass
+                else:
+                    mineField[i][j] = -1
+                    numberOfMinesLeft -= 1
 
     return np.array(mineField)
 
