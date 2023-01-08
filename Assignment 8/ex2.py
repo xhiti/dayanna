@@ -1,7 +1,6 @@
 import os
 
 
-
 class Reader:
     def __init__(self, path:str):
         if len(path) == 0:
