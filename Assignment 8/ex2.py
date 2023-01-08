@@ -36,7 +36,7 @@ class Reader:
                     key = numberOfBytes + key
 
                 file.seek(key, os.SEEK_CUR)
-                currentCharacter = file.read()
+                currentCharacter = file.read(1)
 
                 return  currentCharacter
 
